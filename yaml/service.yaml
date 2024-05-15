@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: cc-app
+ labels:
+   run: cc-app
+spec:
+ ports:
+ - port: 80
+ selector:
+   run: cc-app

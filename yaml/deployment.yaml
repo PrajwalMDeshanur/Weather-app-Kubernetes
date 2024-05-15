@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: cc-app
+spec:
+ selector:
+   matchLabels:
+     run: cc-app
+ replicas: 1
+ template:
+   metadata:
+     labels:
+       run: cc-app
+   spec:
+     containers:
+     - name: cc-app
+       image: prajwaldeshanur/cc-app
+       ports:
+       - containerPort: 80
+       resources:
+         limits:
+           cpu: 500m
+           memory: 500Mi
+         requests:
+           cpu: 200m
+           memory: 200Mi
